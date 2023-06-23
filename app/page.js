@@ -2,21 +2,28 @@ import { headers } from 'next/dist/client/components/headers'
 import Image from 'next/image'
 import { projectList } from './projects'
 
+import styles from './page.module.css'
+
 export default function Home() {
   return (
-  <>
+  <body className={styles.body}>
   <Header/>
-  <Intro/>
-  <Projects/>
-
-  </>
+  <Main/>
+  </body>
+  )
+}
+function Main(){
+  return (
+    <main id={styles.main}>
+      <Intro/>
+      <Projects/>
+    </main>
   )
 }
 
-
 function Header() {
   return (
-    <header id='header'>
+    <header id={styles.header}>
       <h1>Hugo Marin</h1>
     </header>
   )
@@ -32,15 +39,13 @@ function Intro() {
 
 function ProjectElt({ projectId, name = "default project", desc="default description", imgLink = "", gitHubLink = "" }){
   return (
-  <div class='project-elt' id={ 'project-' + projectId }>
-    <h4>{ name }</h4>
+  <div className={styles.projectElt} id={ 'project ' + projectId }>
+    <h4 id={styles.projectName}>{ name }</h4>
     <Image
       src={ imgLink }
-      width={500}
-      height={500}
       alt={ 'project-' + projectId + ' image'}
     />
-    <p class='project-desc'>{ desc }</p>
+    <p id={styles.projectDesc}>{ desc }</p>
   </div>
   )
 }
@@ -55,10 +60,10 @@ function Projects(){
     />
   )
   return (
-  <div>
+  <div id={styles.projects}>
     <h2>Projects</h2>
     <p></p>
-    <div id='projects-container'>
+    <div id={styles.projectsContainer}>
     {allProjectsDiv}
     </div>
   </div>

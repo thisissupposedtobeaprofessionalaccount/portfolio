@@ -1,4 +1,4 @@
 # portfolio
-__not started yet__
+__in progress__
 
 simple portfolio project using Next.js
