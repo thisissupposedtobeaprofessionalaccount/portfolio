@@ -1,12 +1,22 @@
 
 .body{
+  --light-mode-gradient-first-color: hsla(31, 90%, 76%, 1);
+  --light-mode-gradient-second-color: hsla(302, 82%, 76%, 1);
+}
+
+.body{
   position: relative;
   top: 0;
   left: 0;
   margin: 0;
   background-color: #FFECEC;
+}
+.outLink{
+  text-decoration: none;
+  animation: textGradient 15s ease infinite;
 
 }
+
 #header{
   display: flex;
   justify-content: center;
@@ -16,14 +26,41 @@
   height: 100px;
   background: hsla(31, 90%, 76%, 1);
 
-  background: linear-gradient(90deg, hsla(31, 90%, 76%, 1) 0%, hsla(302, 82%, 76%, 1) 100%);
+  background: linear-gradient(90deg, hsla(31, 90%, 76%, 1) 0%, var(--light-mode-gradient-second-color) 100%);
 
-  background: -moz-linear-gradient(90deg, hsla(31, 90%, 76%, 1) 0%, hsla(302, 82%, 76%, 1) 100%);
+  background: -moz-linear-gradient(90deg, hsla(31, 90%, 76%, 1) 0%, var(--light-mode-gradient-second-color) 100%);
 
-  background: -webkit-linear-gradient(0deg, hsla(31, 90%, 76%, 1) 0%, hsla(302, 82%, 76%, 1) 100%);
+  background: -webkit-linear-gradient(0deg, hsla(31, 90%, 76%, 1) 0%, var(--light-mode-gradient-second-color) 100%);
 
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#f9c58d", endColorstr="#f492f0", GradientType=1 );
-  }
+
+  animation: gradient 15s ease infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes textGradient {
+  0% {
+		color: var(--light-mode-gradient-first-color);
+	}
+	50% {
+		color: var(--light-mode-gradient-second-color);
+	}
+	100% {
+		color: var(--light-mode-gradient-first-color);
+	}
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
 #header h1{
   margin: 0;
   margin-top: 10px;
@@ -32,57 +69,122 @@
 }
 
 #main{
+  color: #2B2B2B;
   margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   height: auto;
   }
+
+#intro{
+  text-align: center;
+}
 #projects{
   width: 90%;
   min-width: 930px;
   max-width: 1500px;;
   display: flex;
   flex-flow: column;
-  align-items: stretch;
+  align-items: center;
 }
 #projects h2{
   text-align: center;
 }
 
 #projectsContainer{
+  width: 600px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   
 }
 .projectElt{
-  display: flex;
-  flex-direction: column;
   border-radius: 25px;
-  flex-basis: 45%;
-  
-  align-items: center;
-  background-color: #FFFFFF;
+  flex-basis: 90%;
+  background: linear-gradient(90deg, hsla(31, 90%, 76%, 1) 0%, var(--light-mode-gradient-second-color) 100%);
+
+  background: -moz-linear-gradient(90deg, hsla(31, 90%, 76%, 1) 0%, var(--light-mode-gradient-second-color) 100%);
+
+  background: -webkit-linear-gradient(0deg, hsla(31, 90%, 76%, 1) 0%, var(--light-mode-gradient-second-color) 100%);
+
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#f9c58d", endColorstr="#f492f0", GradientType=1 );
+
+  animation: gradient 15s ease infinite;
+  background-size: 200% 200%;
   height: min-content;
-  max-height: 900px;
-  min-height: min-content;
   margin-bottom: 45px;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
 }
-.projectElt img{
-  max-height: calc(900px*0.75);
-  min-height: calc(350px*0.75);
-  width: 90%;
-  order: -1;
+.projectElt .frontCard{
+  position: relative;
+  border-radius: inherit;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-between;
+  opacity: 1;
+  transition: opacity 0s;
+  transition-delay: 0.2s;
+
 }
-#projectName{
-  margin: 0;
-  margin-bottom: 20px;
-  color: aqua;
-  font-size: 40px;
+.projectElt .backCard{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-radius: inherit;
+  transform: rotateY(180deg);
+  opacity: 0;
+  transition: opacity 0s;
+  transition-delay: 0.2s;
+}
+.projectElt .projectName{
+  font-size: 26px;
+  padding-left: 10px;
+}
+.projectElt .projectStatus{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: rgb(10, 10, 10);
 }
 
-#projectDesc{
-  display: none;
+.projectElt .projectDesc{
+  font-size: 20px;
 }
+
+.projectElt:hover{
+
+  transform: rotateY(180deg);
+}
+
+.projectElt .projectImg{
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+  border: none;
+  order: -1;
+  width: 100%;
+}
+
+.projectElt:hover .frontCard{
+  opacity: 0;
+  transition: opacity 0s;
+  transition-delay: 0.2s;
+}
+.projectElt:hover .backCard{
+  position: absolute;
+  display: flex;
+  flex-flow: column;
+  top: 10px;
+  right: 10px;
+
+  opacity: 1;
+  transition: opacity 0s;
+  transition-delay: 0.2s;
+
+}
+
+
+
