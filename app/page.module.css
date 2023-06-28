@@ -168,6 +168,12 @@
   width: 100%;
 }
 
+.gitHubLogo{
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+}
+
 .projectElt:hover .frontCard{
   opacity: 0;
   transition: opacity 0s;
