@@ -1,21 +1,47 @@
+'use client'
+
 import { headers } from 'next/dist/client/components/headers'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useState } from 'react';
 import { projectList } from './projects'
 
 import styles from './page.module.css'
 
 export default function Home() {
+  const [mode, setMode] = useState(true);
+
+  document.addEventListener("togglemode", ()=>{
+    setMode(!mode);
+    
+  })
+
   return (
-  <body className={styles.body}>
+  <body className={ mode ?`${styles.bodyLightMode} ${styles.body}`: `${styles.bodyDarkMode} ${styles.body}`} >
   <Header/>
   <Main/>
   </body>
   )
 }
 function Main(){
+  const [clicked, setClicked] = useState(true);
+  let iconSize = clicked ? 20 : 25;
   return (
     <main id={styles.main}>
+
+      <button className={styles.modeBtn}
+      onClick={() => {
+        setClicked(!clicked);
+        document.dispatchEvent(new CustomEvent("togglemode"));
+      }}>
+      <Image
+        key={"modebtn"}
+        src={clicked ? "/moon-icon.png" : "/sun-icon.png"}
+        width={iconSize}
+        height={iconSize}
+        style={{objectFit: "cover"}}
+      />
+      </button>
       <Intro/>
       <Projects/>
     </main>

@@ -1,7 +1,20 @@
 
-.body{
-  --light-mode-gradient-first-color: hsla(31, 90%, 76%, 1);
-  --light-mode-gradient-second-color: hsla(302, 82%, 76%, 1);
+.bodyLightMode{
+  --gradient-first-color: hsla(31, 90%, 76%, 1);
+  --gradient-second-color: hsla(302, 82%, 76%, 1);
+  --background-color: #FFECEC;
+  --title-text-color: #FFFFFF;
+  --basic-text-color: #2B2B2B;
+  --modebtn-color: #FFFFFF;
+}
+
+.bodyDarkMode{
+  --gradient-first-color: hsla(302, 82%, 76%, 1);
+  --gradient-second-color: hsla(248, 80%, 53%, 1);
+  --background-color: #1F1C33;
+  --title-text-color: #FFFFFF;
+  --basic-text-color: #F1F1F1;
+  --modebtn-color: #4c495c;
 }
 
 .body{
@@ -9,12 +22,25 @@
   top: 0;
   left: 0;
   margin: 0;
-  background-color: #FFECEC;
+  background-color: var(--background-color);
+}
+
+.modeBtn{
+  position: absolute;
+  width: 60px;
+  height: 50px;
+  top: 110px;
+  right: 20px;
+  background-color: #fff; /*var(--modebtn-color);*/
+  border-radius: 15px;
+  border: none;
+}
+.btnLogo{
+  
 }
 .outLink{
   text-decoration: none;
   animation: textGradient 15s ease infinite;
-
 }
 
 #header{
@@ -22,15 +48,15 @@
   justify-content: center;
   align-content: center;
   margin: 0;
-  color: #FFFFFF;
+  color: var(--title-text-color);
   height: 100px;
   background: hsla(31, 90%, 76%, 1);
 
-  background: linear-gradient(90deg, hsla(31, 90%, 76%, 1) 0%, var(--light-mode-gradient-second-color) 100%);
+  background: linear-gradient(90deg, var(--gradient-first-color) 0%, var(--gradient-second-color) 100%);
 
-  background: -moz-linear-gradient(90deg, hsla(31, 90%, 76%, 1) 0%, var(--light-mode-gradient-second-color) 100%);
+  background: -moz-linear-gradient(90deg, var(--gradient-first-color) 0%, var(--gradient-second-color) 100%);
 
-  background: -webkit-linear-gradient(0deg, hsla(31, 90%, 76%, 1) 0%, var(--light-mode-gradient-second-color) 100%);
+  background: -webkit-linear-gradient(0deg, var(--gradient-first-color) 0%, var(--gradient-second-color) 100%);
 
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#f9c58d", endColorstr="#f492f0", GradientType=1 );
 
@@ -40,13 +66,13 @@
 
 @keyframes textGradient {
   0% {
-		color: var(--light-mode-gradient-first-color);
+		color: var(--gradient-first-color);
 	}
 	50% {
-		color: var(--light-mode-gradient-second-color);
+		color: var(--gradient-second-color);
 	}
 	100% {
-		color: var(--light-mode-gradient-first-color);
+		color: var(--gradient-first-color);
 	}
 }
 
@@ -69,7 +95,7 @@
 }
 
 #main{
-  color: #2B2B2B;
+  color: var(--basic-text-color);
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -107,11 +133,11 @@
 .projectElt{
   border-radius: 25px;
   flex-basis: 45%;
-  background: linear-gradient(90deg, hsla(31, 90%, 76%, 1) 0%, var(--light-mode-gradient-second-color) 100%);
+  background: linear-gradient(90deg, var(--gradient-first-color) 0%, var(--gradient-second-color) 100%);
 
-  background: -moz-linear-gradient(90deg, hsla(31, 90%, 76%, 1) 0%, var(--light-mode-gradient-second-color) 100%);
+  background: -moz-linear-gradient(90deg, var(--gradient-first-color) 0%, var(--gradient-second-color) 100%);
 
-  background: -webkit-linear-gradient(0deg, hsla(31, 90%, 76%, 1) 0%, var(--light-mode-gradient-second-color) 100%);
+  background: -webkit-linear-gradient(0deg, var(--gradient-first-color) 0%, var(--gradient-second-color) 100%);
 
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#f9c58d", endColorstr="#f492f0", GradientType=1 );
 
