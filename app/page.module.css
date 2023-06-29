@@ -93,16 +93,20 @@
 }
 
 #projectsContainer{
-  width: 600px;
+  width: 1200px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
+  gap: 25px
   
 }
+
+/*PROJECT CARDS*/
+
 .projectElt{
   border-radius: 25px;
-  flex-basis: 90%;
+  flex-basis: 45%;
   background: linear-gradient(90deg, hsla(31, 90%, 76%, 1) 0%, var(--light-mode-gradient-second-color) 100%);
 
   background: -moz-linear-gradient(90deg, hsla(31, 90%, 76%, 1) 0%, var(--light-mode-gradient-second-color) 100%);
@@ -115,6 +119,7 @@
   background-size: 200% 200%;
   height: min-content;
   margin-bottom: 45px;
+  
   transition: transform 0.8s;
   transform-style: preserve-3d;
 }

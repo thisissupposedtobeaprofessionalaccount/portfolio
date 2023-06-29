@@ -81,17 +81,14 @@ function ProjectElt({ projectId, name = "default project", desc="default descrip
         className={styles.projectImg}
       />
     </div>
-    console.log(gitHubLink)
     <div className={styles.backCard}>
       <p className={styles.projectDesc}>{ desc }</p>
-      <Link className={styles.gitHubLogo}> href=""//href={gitHubLink? gitHubLink : "/"}
-        <a>
+      <Link href={gitHubLink.length > 0 ? gitHubLink : "/"} className={styles.gitHubLogo}>
         <Image
         src="/github-mark.svg"
         width={25}
         height={25}
         />
-        </a>
       </Link>
       
     </div>
