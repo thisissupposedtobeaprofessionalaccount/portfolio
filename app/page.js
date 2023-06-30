@@ -40,6 +40,7 @@ function Main(){
         width={iconSize}
         height={iconSize}
         style={{objectFit: "cover"}}
+        alt='icon of a sun or a moon for switching modes'
       />
       </button>
       <Intro/>
@@ -114,6 +115,7 @@ function ProjectElt({ projectId, name = "default project", desc="default descrip
         src="/github-mark.svg"
         width={25}
         height={25}
+        alt='github logo'
         />
       </Link>
       

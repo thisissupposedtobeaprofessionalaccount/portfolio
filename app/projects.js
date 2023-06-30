@@ -15,7 +15,7 @@ export const projectList = [
     },
     {
         name: 'Dancing Cursor',
-        desc: 'This is a fun project where I am trying to overcome VSCode restriction over their extension by making the cursor move following a beat. VSCode is very restrictive when it comes to a bunch of operations such as opening pages within the editor.',
+        desc: 'This is a fun project where I am trying to overcome VSCode restriction over their extension by making the cursor move following a beat. VSCode is very restrictive when it comes to a bunch of operations such as opening pages within the editor. The project is functionnal but we wish to make it better !',
         imgLink: '/img/projects/dancingcursorpreview.png',
         gitHubLink:'https://github.com/thisissupposedtobeaprofessionalaccount/DancingCursor',
         status: 0,
