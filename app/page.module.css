@@ -6,6 +6,8 @@
   --title-text-color: #FFFFFF;
   --basic-text-color: #2B2B2B;
   --modebtn-color: #FFFFFF;
+
+  animation:  1s ease-out 0s 1 appear;
 }
 
 .bodyDarkMode{
@@ -15,6 +17,8 @@
   --title-text-color: #FFFFFF;
   --basic-text-color: #F1F1F1;
   --modebtn-color: #4c495c;
+
+  animation: 1s ease-out 0s 1 appear; 
 }
 
 .body{
@@ -35,9 +39,7 @@
   border-radius: 15px;
   border: none;
 }
-.btnLogo{
-  
-}
+
 .outLink{
   text-decoration: none;
   animation: textGradient 15s ease infinite;
@@ -62,7 +64,19 @@
 
   animation: gradient 15s ease infinite;
   background-size: 200% 200%;
+
 }
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
 
 @keyframes textGradient {
   0% {

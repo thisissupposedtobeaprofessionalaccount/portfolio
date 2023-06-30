@@ -1,9 +1,9 @@
 export const projectList = [
     {
         name: "PicPals",
-        desc: "A conceptual social network where you share a drawing a day with your friend based on a pre-generated sentence. I made this project with Olvier Andriko as a way to discover a various technologies (Flutter, Express.JS and MongoDB).",
+        desc: "Final-year supervised project. PicPals is conceptual social network where you share a drawing a day with your friend based on a pre-generated sentence. Made with Olvier Andriko, as a way to discover a various technologies (Flutter, Express.JS and MongoDB). This project is actually composed of two more which are a REST API and a daily update server.",
         imgLink: "/img/projects/previewpicpals.png",
-        gitHubLink: "https://github.com/thisissupposedtobeaprofessionalaccount",
+        gitHubLink: "https://github.com/valdoin/PicPals",
         status: 1,
     },
     {
@@ -24,7 +24,7 @@ export const projectList = [
         name: 'CroustiPays',
         desc: 'A useless app made with Olivier Andriko for a school project. This helped us to learn how to use web API (restcountries here) and GoogleMaps API',
         imgLink: '/img/projects/croustipaypreview.png',
-        gitHubLink:'https://github.com/gitgargamel6/CroustiPays',
+        gitHubLink:'https://github.com/valdoin/CroustiPays',
         status: 1,
     },
     {
