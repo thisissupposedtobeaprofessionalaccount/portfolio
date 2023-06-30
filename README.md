@@ -1,4 +1,4 @@
 # portfolio
-__in progress__
+__almost done__
 
-simple portfolio project using Next.js
+simple portfolio project using Next.js and pure CSS.
