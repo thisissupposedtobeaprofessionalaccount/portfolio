@@ -11,19 +11,17 @@ import styles from './page.module.css'
 export default function Home() {
   const [mode, setMode] = useState(true);
 
-  document.addEventListener("togglemode", ()=>{
-    setMode(!mode);
-    
-  })
-
   return (
   <body className={ mode ?`${styles.bodyLightMode} ${styles.body}`: `${styles.bodyDarkMode} ${styles.body}`} >
   <Header/>
-  <Main/>
+  <Main
+    onToggleMode = {()=>{
+      setMode(!mode)}}
+      />
   </body>
   )
 }
-function Main(){
+function Main({onToggleMode}){
   const [clicked, setClicked] = useState(true);
   let iconSize = clicked ? 20 : 25;
   return (
@@ -32,7 +30,7 @@ function Main(){
       <button className={styles.modeBtn}
       onClick={() => {
         setClicked(!clicked);
-        document.dispatchEvent(new CustomEvent("togglemode"));
+        onToggleMode();
       }}>
       <Image
         key={"modebtn"}

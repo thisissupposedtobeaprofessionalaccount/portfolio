@@ -38,6 +38,7 @@
   background-color: #fff; /*var(--modebtn-color);*/
   border-radius: 15px;
   border: none;
+  cursor: pointer;
 }
 
 .outLink{
