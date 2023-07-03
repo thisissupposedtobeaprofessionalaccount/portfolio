@@ -7,13 +7,6 @@ export const projectList = [
         status: 1,
     },
     {
-        name: "SimaScope",
-        desc: "An open source web based network manager project. I was inspired mostly by Uptime Kuma user-friendly interface",
-        imgLink: "/img/projects/simascopelogo.png",
-        gitHubLink: "https://github.com/thisissupposedtobeaprofessionalaccount/SimaScope",
-        status: -1,
-    },
-    {
         name: 'Dancing Cursor',
         desc: 'This is a fun project where I am trying to overcome VSCode restriction over their extension by making the cursor move following a beat. VSCode is very restrictive when it comes to a bunch of operations such as opening pages within the editor. The project is functionnal but we wish to make it better !',
         imgLink: '/img/projects/dancingcursorpreview.png',
@@ -33,5 +26,12 @@ export const projectList = [
         imgLink: '/img/projects/portfoliopreview.png',
         gitHubLink:'https://github.com/thisissupposedtobeaprofessionalaccount/portfolio',
         status: 1,
+    },
+    {
+        name: "SimaScope",
+        desc: "An open source web based network manager project. I was inspired mostly by Uptime Kuma user-friendly interface",
+        imgLink: "/img/projects/simascopelogo.png",
+        gitHubLink: "https://github.com/thisissupposedtobeaprofessionalaccount/SimaScope",
+        status: -1,
     },
 ]
