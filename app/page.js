@@ -1,6 +1,5 @@
 'use client'
 
-import { headers } from 'next/dist/client/components/headers'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react';
@@ -12,13 +11,13 @@ export default function Home() {
   const [mode, setMode] = useState(true);
 
   return (
-  <body className={ mode ?`${styles.bodyLightMode} ${styles.body}`: `${styles.bodyDarkMode} ${styles.body}`} >
-  <Header/>
-  <Main
-    onToggleMode = {()=>{
-      setMode(!mode)}}
-      />
-  </body>
+      <body className={ mode ?`${styles.bodyLightMode} ${styles.body}`: `${styles.bodyDarkMode} ${styles.body}`} >
+      <Header/>
+      <Main
+        onToggleMode = {()=>{
+          setMode(!mode)}}
+          />
+      </body>
   )
 }
 function Main({onToggleMode}){
