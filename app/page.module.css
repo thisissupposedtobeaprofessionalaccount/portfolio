@@ -176,16 +176,7 @@
   transition-delay: 0.2s;
 
 }
-.projectElt .backCard{
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  border-radius: inherit;
-  transform: rotateY(180deg);
-  opacity: 0;
-  transition: opacity 0s;
-  transition-delay: 0.2s;
-}
+
 .projectElt .projectName{
   font-size: 26px;
   padding-left: 10px;
@@ -201,10 +192,7 @@
   font-size: 20px;
 }
 
-.projectElt:hover{
 
-  transform: rotateY(180deg);
-}
 
 .projectElt .projectImg{
   border-top-left-radius: inherit;
@@ -220,26 +208,46 @@
   right: 10px;
 }
 
-.projectElt:hover .frontCard{
-  opacity: 0;
-  transition: opacity 0s;
-  transition-delay: 0.2s;
+/*COMPUTER*/
+@media screen and (min-width: 1130px){
+
+  .projectElt:hover{
+
+    transform: rotateY(180deg);
+  }
+  
+  .projectElt:hover .frontCard{
+    opacity: 0;
+    transition: opacity 0s;
+    transition-delay: 0.2s;
+  }
+  .projectElt:hover .backCard{
+    position: absolute;
+    display: flex;
+    flex-flow: column;
+    top: 10px;
+    right: 10px;
+  
+    opacity: 1;
+    transition: opacity 0s;
+    transition-delay: 0.2s;
+  
+  }
+
+  .projectElt .backCard{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: inherit;
+    transform: rotateY(180deg);
+    opacity: 0;
+    transition: opacity 0s;
+    transition-delay: 0.2s;
+  }
+
 }
-.projectElt:hover .backCard{
-  position: absolute;
-  display: flex;
-  flex-flow: column;
-  top: 10px;
-  right: 10px;
 
-  opacity: 1;
-  transition: opacity 0s;
-  transition-delay: 0.2s;
-
-}
-
-
-
+/*MOBILE*/
 @media screen and (max-width: 1130px) {
 
 
@@ -273,5 +281,12 @@
     flex-basis: 95%;
   }
 
+  .projectElt .backCard{
+    padding: 10px;
+    padding-top: 0px;
+    position: relative;
+    border-radius: inherit;
+    opacity: 1;
+  }
 
 }
